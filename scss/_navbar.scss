@@ -4,8 +4,7 @@ header {
     nav {
         border-bottom: 1px solid $colPrinc;
         box-shadow: 0 5px 5px $colPrincSfumato;
-        // border-bottom:1px solid $sfondoBanner;
-        // box-shadow:0 3px 5px $sfondoBannerSfumato;
+
 
         img.logo {
             margin-left: 10%;
@@ -34,7 +33,7 @@ header {
                 margin: 0;
                 padding: 5px 10px 5px 10px;
                 display: inline;
-                font-family: 'Bitter';
+                font-family: $FFamilyTitolo;
                 font-size: 1.2rem;
 
             }
@@ -42,4 +41,5 @@ header {
     }
 
 
+    @include effettoLink($colPrinc, $testo, "effetto");
 }

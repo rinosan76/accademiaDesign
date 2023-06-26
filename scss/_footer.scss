@@ -1,0 +1,35 @@
+footer {
+    background-color: $sfondoBanner;
+    color: $testoPie;
+    padding: 15px 0 10px 0;
+    font-family: $FFamilyTitolo;
+    font-size: 1.2rem;
+
+    p {
+        padding-top: 5px;
+        word-break: break-word;
+        text-align: center;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+
+        li {
+            display: inline;
+            padding: 0 5px;
+
+            a {
+                font-size: 2rem;
+                color: $linkPie;
+
+                &:hover {
+                    color: $linkPieHover;
+                }
+            }
+        }
+    }
+
+    @include effettoLink($linkPieHover, $linkPie, "effetto");
+}
