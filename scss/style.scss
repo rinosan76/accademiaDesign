@@ -1,5 +1,58 @@
 @import "variabili";
-@import "navbar";
-@import "footer";
+
 @import "mixin";
 @import "funzioni";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    background-color: $sfondoBody;
+}
+
+@import "navbar";
+@import "footer";
+
+div.content {
+    margin-top: 100px;
+}
+
+
+a.left {
+    background-image: linear-gradient(to right,
+            $colPrinc,
+            $colPrinc 50%,
+            $testo 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+a.left:before {
+    content: '';
+    background: $colPrinc;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+a.left:hover {
+    background-position: 0;
+}
+
+a.left:hover::before {
+    width: 100%;
+}

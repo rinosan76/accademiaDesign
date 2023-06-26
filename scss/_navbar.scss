@@ -1,0 +1,45 @@
+header {
+    background-color: $sfondoTesto;
+
+    nav {
+        border-bottom: 1px solid $colPrinc;
+        box-shadow: 0 5px 5px $colPrincSfumato;
+        // border-bottom:1px solid $sfondoBanner;
+        // box-shadow:0 3px 5px $sfondoBannerSfumato;
+
+        img.logo {
+            margin-left: 10%;
+            width: 200px;
+        }
+
+        ul {
+            margin: 0 0 0 0;
+            padding: 5px;
+            list-style: none;
+
+            @media all and (min-width: ($xxxl + "px")) {
+                margin-left: 50%;
+            }
+
+            @media all and (min-width: ($xxl + "px")) and (max-width: ($xxxl + "px")) {
+                margin-left: 30%;
+            }
+
+            @media all and (min-width: ($xl + "px")) and (max-width: ($xxl + "px")) {
+                margin-left: 20%;
+            }
+
+
+            li {
+                margin: 0;
+                padding: 5px 10px 5px 10px;
+                display: inline;
+                font-family: 'Bitter';
+                font-size: 1.2rem;
+
+            }
+        }
+    }
+
+
+}
