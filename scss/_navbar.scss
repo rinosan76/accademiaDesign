@@ -40,6 +40,13 @@ header {
         }
     }
 
+    a {
+        border: 1px solid $sfondoTesto;
+    }
 
     @include effettoLink($colPrinc, $testo, "effetto");
+
+    a.active {
+        border-top: 2px solid $sfondoBody;
+    }
 }
