@@ -26,7 +26,10 @@
         crossorigin="anonymous"></script>
 
     <!-- MIO JS -->
-
+    <script src="./js/slideCarousel.js"></script>
+    <script>
+        window.onload = start;
+    </script>
 </head>
 
 <body>
@@ -45,7 +48,21 @@
                     <li><a href="#" title="Vai nella sezione L'Accademia">L'Accademia</a></li>
                     <li><a href="#" title="Vai nella sezione Dicono di noi">Dicono di noi</a></li>
                     <li><a href="#" title="Vai nella sezione Contattaci">Contattaci</a></li>
-                </ul>
+                </ul>let items = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 4
+    let next = el.nextElementSibling
+    for (var i = 1; i < minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+            next = items[0]
+        }
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
             </div>
 
         </nav> -->
@@ -96,25 +113,33 @@
                 ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
             </p>
         </main>
-        <div class="doppioSfondo row g-0">
+        <section class="aule row g-0">
             <div class="primaColonna col-xl-6 col-lg-12">
                 <div class="contenutoColonna">
-                    ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
+                    <h3><i class="bi bi-2-circle-fill occupato"></i>Partenza aula: 11 luglio 2023</h3>
+                    <p>Posti in esaurimento</p>
                 </div>
             </div>
             <div class="secondaColonna col-xl-6 col-lg-12">
                 <div class="contenutoColonna">
-                    ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
+                    <h3><i class="bi bi-emoji-smile-fill libero"></i> Partenza aula: 16 settembre 2023</h3>
+                    <p>Posti disponibili</p>
                 </div>
             </div>
-        </div>
-        <section id="link-2">
-            <h2>Il corso</h2>
-            <p>
-                ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
-                ciao<br>vciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
-                ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
-            </p>
+        </section>
+        <section id="link-2">let items = document.querySelectorAll('.carousel .carousel-item')
+
+            items.forEach((el) => {
+            const minPerSlide = 4
+            let next = el.nextElementSibling
+            for (var i = 1; i < minPerSlide; i++) { if (!next) { // wrap carousel by using first child next=items[0] }
+                let cloneChild=next.cloneNode(true) el.appendChild(cloneChild.children[0]) next=next.nextElementSibling
+                } }) <h2>Il corso</h2>
+                <p>
+                    ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
+                    ciao<br>vciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
+                    ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
+                </p>
         </section>
         <section id="link-3">
             <h2>L'Accademia</h2>
@@ -124,16 +149,155 @@
                 ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
             </p>
         </section>
-        <section id="link-4">
-            <h2>Dicono di noi</h2>
-            <p>
-                ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
-                ciao<br>vciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
-                ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
-            </p>
-        </section>
-        <section id="link-5" class="contattaci">
 
+        <section id="link-4" class="row g-0">
+
+            <div class="primaColonna col-xl-6 col-lg-12">
+                <div class="contenutoColonna">
+                    <h2>Dicono di noi</h2>
+                    <figure class="citazione">
+                        <div class="quote"> </div>
+                        <blockquote class="testoQuote" cite="www.trustpilot.com">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi ante, placerat eu efficitur
+                            nec,
+                            accumsan eu ex. Donec ornare arcu ut nisl posuere, sit amet ultrices nisl suscipit. Donec in
+                            sagittis nunc, imperdiet porta metus. Ut justo est, fermentum at neque non, imperdiet
+                            egestas
+                            ligula. Morbi ornare pellentesque ante, ut consequat elit sagittis eu. Proin bibendum erat
+                            id
+                            sagittis iaculis. Vivamus tortor ipsum, porttitor ut felis a, varius ultricies ipsum. Etiam
+                            felis ex, sodales ut risus non, varius viverra nibh. Proin est dui, finibus vel urna a,
+                            auctor
+                            ullamcorper orci.
+                        </blockquote>
+                        <figcaption><cite>Giorgia</cite> (12/02/2023)</figcaption>
+                        <div class="quote-flip"></div>
+                    </figure>
+
+                </div>
+            </div>
+            <div class="secondaColonna col-xl-6 d-xl-block d-lg-none">
+                <div class="contenutoColonna">
+                    <!-- <iframe allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""
+                        data-src="https://player.vimeo.com/video/809137480?dnt=1&amp;app_id=122963" class=" lazyloaded"
+                        src="https://player.vimeo.com/video/809137480?dnt=1&amp;app_id=122963" name="fitvid1"
+                        frameborder="0"></iframe> -->
+                    <img src="./img/girlCitazione.png" alt="Foto di Giorgia" class="fotoCitazione">
+                </div>
+            </div>
+        </section>
+
+        <section id="carousel-citazioni">
+            <div class="container text-center my-3">
+                <div class="row mx-auto my-auto justify-content-center">
+                    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <img src="./img/cit-01.webp" class="img-fluid">
+                                        </div>
+                                        <div class="card-img-overlay">
+                                            <div class="testo">Stefania</div>
+                                            <div class="txt"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Sed mi ante, placerat eu efficitur nec, accumsan eu ex. Donec ornare
+                                                arcu ut nisl posuere, sit amet ultrices nisl suscipit. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <img src="./img/cit-02.webp" class="img-fluid">
+                                        </div>
+                                        <div class="card-img-overlay">
+                                            <div class="testo">Lucia</div>
+                                            <div class="txt"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Sed mi ante, placerat eu efficitur nec, accumsan eu ex. Donec ornare
+                                                arcu ut nisl posuere, sit amet ultrices nisl suscipit. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <img src="./img/cit-03.webp" class="img-fluid">
+                                        </div>
+                                        <div class="card-img-overlay">
+                                            <div class="testo">Melissa</div>
+                                            <div class="txt"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Sed mi ante, placerat eu efficitur nec, accumsan eu ex. Donec ornare
+                                                arcu ut nisl posuere, sit amet ultrices nisl suscipit. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <img src="./img/cit-04.webp" class="img-fluid">
+                                        </div>
+                                        <div class="card-img-overlay">
+                                            <div class="testo">Laura</div>
+                                            <div class="txt"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Sed mi ante, placerat eu efficitur nec, accumsan eu ex. Donec ornare
+                                                arcu ut nisl posuere, sit amet ultrices nisl suscipit. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <img src="./img/cit-05.webp" class="img-fluid">
+                                        </div>
+                                        <div class="card-img-overlay">
+                                            <div class="testo">Antonio</div>
+                                            <div class="txt"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Sed mi ante, placerat eu efficitur nec, accumsan eu ex. Donec ornare
+                                                arcu ut nisl posuere, sit amet ultrices nisl suscipit. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="card" data-bs-target="#modalCitazione">
+                                        <div class="card-img">
+                                            <img src="./img/cit-06.webp" class="img-fluid">
+                                        </div>
+                                        <div class="card-img-overlay">
+                                            <div class="testo"> Federico </div>
+                                            <div class="txt"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Sed mi ante, placerat eu efficitur nec, accumsan eu ex. Donec ornare
+                                                arcu ut nisl posuere, sit amet ultrices nisl suscipit. </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="link-5">
             <div class="row g-0">
                 <div class="primaColonna col-xl-6 col-lg-12">
                     <div class="contenutoColonna">
@@ -142,32 +306,35 @@
                             <fieldset class="row">
                                 <legend>I tuoi dati</legend>
                                 <div class="mb-3 col-12">
-                                    <label for="email" class="form-label">E-mail</label>
+                                    <label for="email" class="form-label">E-mail<span class="richiesto">*</span></label>
                                     <input type="email" class="form-control" id="email" name="email"
                                         placeholder="nome@esempio.com" required>
                                 </div>
-                                <div class="mb-3 col-6">
-                                    <label for="nome" class="form-label">Nome</label>
+                                <div class="mb-3 col-sm-6 col-xs-12">
+                                    <label for="nome" class="form-label">Nome<span class="richiesto">*</span></label>
                                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Mario"
                                         required>
                                 </div>
-                                <div class="mb-3 col-6">
-                                    <label for="cognome" class="form-label">Cognome</label>
+                                <div class="mb-3 col-sm-6 col-xs-12">
+                                    <label for="cognome" class="form-label">Cognome<span
+                                            class="richiesto">*</span></label>
                                     <input type="text" class="form-control" id="cognome" name="cognome"
                                         placeholder="Rossi" required>
                                 </div>
-                                <div class="mb-3 col-6">
-                                    <label for="dataNascita" class="form-label">Data di nascita</label>
+                                <div class="mb-3 col-sm-6 col-xs-12">
+                                    <label for="dataNascita" class="form-label">Data di nascita<span
+                                            class="richiesto">*</span></label>
                                     <input type="date" class="form-control" id="dataNascita" name="dataNascita"
                                         placeholder="gg/mm/YYYY" required>
                                 </div>
-                                <div class="mb-3 col-6">
+                                <div class="mb-3 col-sm-6 col-xs-12">
                                     <label for="telefono" class="form-label">Telefono</label>
                                     <input type="text" class="form-control" id="telefono" name="telefono"
                                         placeholder="+39 333.4564567" required>
                                 </div>
                                 <div class="mb-3 col-12">
-                                    <label for="titolo" class="form-label">Titolo di studio</label>
+                                    <label for="titolo" class="form-lfadeabel">Titolo di studio<span
+                                            class="richiesto">*</span></label>
                                     <input type="text" class="form-control" id="titolo" name="titolo"
                                         placeholder="perito">
                                 </div>
@@ -177,9 +344,9 @@
                                         placeholder="pensionato">
                                 </div>
                                 <div class="fintaLabel col-12">
-                                    A che ora desideri essere contattato?
+                                    A che ora desideri essere contattato?<span class="richiesto">*</span>
                                 </div>
-                                <div class="mb-3 col-12">
+                                <div class="mb-3 col-12">fade
 
                                     <input class="form-check-input" type="radio" name="orario" id="orario1">
                                     <label class="form-check-label me-4" for="orario1">
@@ -196,10 +363,6 @@
                                         Sera
                                     </label>
 
-                                    <input class="form-check-input" type="radio" name="orario" id="orario4">
-                                    <label class="form-check-label" for="orario4">
-                                        Indifferente
-                                    </label>
                                 </div>
 
                                 <div class="mb-3 pt-3 col-12">
@@ -215,9 +378,9 @@
                         </form>
                     </div>
                 </div>
-                <div class="secondaColonna col-xl-6 col-lg-12">
-                    <div class="contenutoColonna">
-                        ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>ciao<br>
+                <div class="secondaColonna col-xl-6 d-xl-block d-lg-none">
+                    <div class="contenutoColonna sfondoColonna">
+
                     </div>
                 </div>
             </div>
@@ -225,6 +388,23 @@
 
         </section>
 
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="modalCitazione">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="btn-close chiudiModalCitazione"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary chiudiModalCitazione">Chiudi</button>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- ### FINE CONTENUTO ######################################################################### -->
 

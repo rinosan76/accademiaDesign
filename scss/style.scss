@@ -28,167 +28,337 @@ body {
     }
 }
 
+%dueColonne {
+    width: 100%;
+
+    .primaColonna {
+        padding: 50px 0 50px 0;
+        // border: 1px solid red;
+
+        .contenutoColonna {
+            @extend %cont;
+            margin-left: 40%;
+            // border: 1px solid green;
+
+            @media all and (min-width: ($xl + "px")) and (max-width: ($xxl + "px")) {
+                margin-left: 20%;
+            }
+
+            @media all and (max-width: ($xl + "px")) {
+                margin: auto;
+            }
+        }
+    }
+
+    .secondaColonna {
+        padding: 50px 0 50px 0;
+        // border: 1px solid red;
+
+        .contenutoColonna {
+            @extend %cont;
+            // border: 1px solid green;
+
+            @media all and (max-width: ($xl + "px")) {
+                margin: auto;
+            }
+        }
+    }
+}
+
+%h {
+    color: $titoli;
+    font-family: $FFamilyTitolo;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        @extend %h;
+        font-size: $size + $delta_size*(6-$i);
+    }
+}
+
 @import "navbar";
 @import "footer";
 
 div.content {
     margin-top: 100px;
-
-    .doppioSfondo {
-        width: 100%;
-
-        .primaColonna {
-            background-color: calcolaColoreFn($sfondoBanner, 1, 3%);
-
-            .contenutoColonna {
-                @extend %cont;
-                margin-left: 40%;
-
-                @media all and (min-width: ($xl + "px")) and (max-width: ($xxl + "px")) {
-                    margin-left: 20%;
-                }
-
-                @media all and (max-width: ($xl + "px")) {
-                    margin: auto;
-
-                }
-            }
-        }
-
-        .secondaColonna {
-            background-color: $sfondoBanner;
-
-            .contenutoColonna {
-                @extend %cont;
-
-                @media all and (max-width: ($xl + "px")) {
-                    margin: auto;
-                }
-            }
-        }
-
-    }
 }
 
 
 section,
 main {
     margin: auto;
-    width: 60%;
+    // width: 60%;
     background-color: $sfondoTesto;
 
-    @media all and (min-width: ($xl + "px")) and (max-width: ($xxl + "px")) {
-        width: 80%;
+
+}
+
+
+section.aule {
+    @extend %dueColonne;
+    color: $testoPie;
+
+    h3 {
+        color: $testoPie;
+
+        i {
+            margin-right: 20px;
+
+            &.occupato {
+                color: calcolaColoreFn($colPrinc, 1, 40%);
+            }
+
+            &.libero {
+                color: calcolaColoreFn($colLibero, 1, 40%);
+            }
+        }
     }
 
-    @media all and (max-width: ($xl + "px")) {
-        width: 100%
+    .primaColonna {
+        background-color: calcolaColoreFn($sfondoBanner, 1, 4%);
     }
 
-    &.contattaci {
-        background-color: calcolaColoreFn($sfondoBanner, 1, 3%);
+    .secondaColonna {
+        background-color: $sfondoBanner;
+    }
+
+    // @media all and (min-width: ($xl + "px")) and (max-width: ($xxl + "px")) {
+    //     width: 80%;
+    // }
+
+    // @media all and (max-width: ($xl + "px")) {
+    //     width: 100%
+    // }
+}
+
+section#link-5 {
+    @extend %dueColonne;
+    background-color: calcolaColoreFn($sfondoBanner, 1, 2.8%);
+    margin-bottom: 0;
+
+    h2 {
+        margin-bottom: 20px;
+        color: $testoPie;
+    }
+
+    form {
+        fieldset {
+            legend {
+                display: none;
+            }
+
+            label,
+            .fintaLabel {
+                color: $testoPie;
+
+                span.richiesto {
+                    color: $colPrinc;
+                    margin-left: 3px
+                }
+            }
+
+            p.privacy {
+                font-size: 0.8rem;
+                color: $testoPie;
+                margin-top: 10px;
+            }
+
+            input[type=text],
+            input[type=date],
+            input[type=email],
+            input[type=number],
+            textarea {
+                border-radius: 0;
+                background-color: $sfondoInput;
+                border: none;
+                border-bottom: 4px solid $testoPie;
+
+                &:focus {
+                    border-bottom-color: $colPrinc;
+                }
+            }
+
+            input:focus,
+            input:checked {
+                box-shadow: none;
+            }
+
+            .form-check-input:checked {
+                background-color: $colPrinc;
+                border-color: $colPrinc;
+                // box-shadow: none;
+            }
+
+            ::placeholder {
+                color: $testoPie;
+                opacity: 1;
+            }
+
+            :-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: $testoPie;
+            }
+
+            ::-ms-input-placeholder {
+                /* Microsoft Edge */
+                color: $testoPie;
+            }
+
+            text-align: start;
+        }
+    }
+
+    .sfondoColonna {
+        margin-top: 50px;
+        background-image: url(../img/gioielloContatti3.jpeg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left;
+        min-height: 550px;
+        // border: 1px solid red;
+    }
+}
+
+
+section#link-4 {
+    @extend %dueColonne;
+
+    img.fotoCitazione {
+        width: auto;
+        height: 500px;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease-in-out;
+
+        &:hover {
+            filter: grayscale(0%);
+        }
+    }
+}
+
+
+
+
+
+figure.citazione {
+    color: $testo;
+
+    blockquote.testoQuote {
+        margin: 0;
+        padding: 0 40px;
+        text-align: justify;
+        font-style: italic;
+    }
+
+    figcaption {
+        text-align: end;
+        padding: 20px 50px 0 0;
+        font-size: 0.9rem;
+
+        cite {
+            font-weight: bold;
+        }
+    }
+
+    .quote {
         width: 100%;
-        margin-bottom: 0;
-
-        .primaColonna {
-
-
-            .contenutoColonna {
-                @extend %cont;
-                margin-left: 40%;
-                padding: 30px;
-
-                @media all and (min-width: ($xl + "px")) and (max-width: ($xxl + "px")) {
-                    margin-left: 20%;
-                }
-
-                @media all and (max-width: ($xl + "px")) {
-                    margin: auto;
-
-                }
-
-                h2 {
-                    margin-bottom: 20px;
-                    color: $testoPie;
-                }
-
-                form {
-                    fieldset {
-                        legend {
-                            display: none;
-                        }
-
-                        label,
-                        .fintaLabel {
-                            color: $testoPie;
-                        }
-
-                        p.privacy {
-                            font-size: 0.8rem;
-                            color: $testoPie;
-                            margin-top: 10px;
-                        }
-
-                        input[type=text],
-                        input[type=date],
-                        input[type=email],
-                        input[type=number],
-                        textarea {
-                            border-radius: 0;
-                            background-color: $sfondoInput;
-                            border: none;
-                            border-bottom: 4px solid $testoPie;
-
-                            &:focus {
-                                border-bottom-color: $colPrinc;
-                            }
-                        }
-
-                        input:focus,
-                        input:checked {
-                            box-shadow: none;
-                        }
-
-                        .form-check-input:checked {
-                            background-color: $colPrinc;
-                            border-color: $colPrinc;
-                            // box-shadow: none;
-                        }
-
-
-
-                        ::placeholder {
-                            color: $testoPie;
-                            opacity: 1;
-                        }
-
-                        :-ms-input-placeholder {
-                            /* Internet Explorer 10-11 */
-                            color: $testoPie;
-                        }
-
-                        ::-ms-input-placeholder {
-                            /* Microsoft Edge */
-                            color: $testoPie;
-                        }
-
-                        text-align: start;
-
-                    }
-                }
-            }
-        }
-
-        .secondaColonna {
-
-            .contenutoColonna {
-                @extend %cont;
-
-                @media all and (max-width: ($xl + "px")) {
-                    margin: auto;
-                }
-            }
-        }
-
+        height: 60px;
+        background-image: url('https://api.iconify.design/bi/quote.svg?color=%23ffebf5&width=60&height=60');
+        background-repeat: no-repeat;
+        background-position: top left;
+        color: $testoPie;
     }
+
+    .quote-flip {
+        width: 100%;
+        height: 60px;
+        background-image: url('https://api.iconify.design/bi/quote.svg?color=%23ffebf5&width=60&height=60&rotate=180deg');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        color: $testoPie;
+    }
+}
+
+
+/*###################################################################*/
+/* CAROUSEL DI CITAZIONI*/
+
+
+
+.card {
+    margin: 10px;
+    border: 1px solid $colPrinc;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-in-out;
+
+    &:hover {
+        filter: grayscale(0%);
+    }
+
+    .card-img-overlay {
+        color: $colPrinc;
+        background-color: rgba($color: $sfondoTesto, $alpha: 0.2);
+        height: 50px;
+
+
+        .testo {
+            color: $colPrinc;
+            background: transparent;
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        .txt {
+            display: none;
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item>div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+    transform: translateX(0);
+}
+
+.custom-popover {
+    --bs-popover-max-width: 200px;
+    --bs-popover-border-color: var(--bs-primary);
+    --bs-popover-header-bg: var(--bs-primary);
+    --bs-popover-header-color: var(--bs-white);
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+}
+
+#modalCitazione {
+    display: none;
 }

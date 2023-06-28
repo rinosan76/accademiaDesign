@@ -47,6 +47,6 @@ header {
     @include effettoLink($colPrinc, $testo, "effetto");
 
     a.active {
-        border-top: 2px solid $sfondoBody;
+        border-top: 2px solid $colPrincSlavato;
     }
 }
