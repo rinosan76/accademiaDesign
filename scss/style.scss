@@ -406,21 +406,22 @@ section.aule {
 }
 
 
-section.titolo {
-    @extend %dueColonne;
-    background-color: $sfondoBanner;
-    padding: 0;
+// section.titolo {
+//     @extend %dueColonne;
+//     background-color: $sfondoBanner;
+//     padding: 0;
 
-    .primaColonna {
-        margin: 50px 0 10px 0;
-        padding: 0;
-    }
+//     .primaColonna {
+//         margin: 50px 0 10px 0;
+//         padding: 0;
 
-    h3 {
-        text-align: start;
-        color: $testoPie;
-    }
-}
+//         @media all and (max-width: ($xl + "px")) {
+//             margin: auto;
+//         }
+//     }
+
+
+// }
 
 section#carousel-gioielli {
     background-color: $sfondoBanner;
@@ -430,10 +431,13 @@ section#carousel-gioielli {
 section#carousel-aziende {
     @extend %dueColonne;
     background-color: $sfondoBanner;
-    padding: 0 0 50px 0;
-    margin-top: 0px;
+    padding: 50px 0;
 
 
+    h3 {
+        text-align: center;
+        color: $testoPie;
+    }
 }
 
 figure.citazione {
