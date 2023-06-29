@@ -1,3 +1,14 @@
+@use "sass:math";
+
+@mixin filtro($perc, $perc2:0) {
+    filter: grayscale(math.percentage(math.div($perc, 100)));
+    transition: filter 0.5s ease-in-out;
+
+    &:hover {
+        filter: grayscale(math.percentage(math.div($perc2, 100)));
+    }
+}
+
 @mixin effettoLink($colore1, $colore2, $classe) {
     a.#{$classe} {
         padding: 5px 0;

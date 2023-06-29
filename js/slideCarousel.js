@@ -3,13 +3,19 @@ const modal = "modalCitazione";
 const bott = "chiudiModalCitazione";
 
 function start() {
-    let items = document.querySelectorAll('.carousel .carousel-item')
+    let items = document.querySelectorAll('#testimonial .carousel-item')
     attivaCarousel(items);
-    items = document.querySelectorAll('.card');
+    items = document.querySelectorAll('#gioielliSlide .carousel-item')
+    attivaCarousel(items);
+    items = document.querySelectorAll('#aziendeSlide .carousel-item')
+    attivaCarousel(items);
+
+
+    items = document.querySelectorAll('#testimonial .card');
     attivaEventi(items);
 
     items = document.querySelectorAll("." + bott);
-    console.log(items);
+    // console.log(items);
     attivaEventiChiusura(items);
 }
 
@@ -36,7 +42,7 @@ function attivaEventi(items) {
     items.forEach((el) => {
         let nome = el.querySelectorAll(".testo")[0].outerText;
         let testo = el.querySelectorAll(".txt")[0].outerText;
-        console.log(nome, testo);
+        // console.log(nome, testo);
         el.addEventListener("click", apri);
         el.nome = 'Testimonianza di ' + nome;
         el.txt = testo;
@@ -61,5 +67,5 @@ function apri(elemento) {
 function chiudi() {
     let el = document.getElementById(modal);
     el.style.display = "none";
-    console.log("chiudi");
+    // console.log("chiudi");
 }

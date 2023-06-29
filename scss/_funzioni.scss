@@ -3,3 +3,9 @@
     // molte altre operazioni
     @return $colore;
 }
+
+@function calcolaColoreScuroFn($base, $incremento, $perc:10%) {
+    $colore: darken($base, $incremento * $perc);
+    // molte altre operazioni
+    @return $colore;
+}

@@ -8,6 +8,7 @@
     margin: 0;
     box-sizing: border-box;
     font-size: 100%;
+    line-height: 180%;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
     width: 100%;
 
     .primaColonna {
-        padding: 50px 0 50px 0;
+        padding: 50px 10px 50px 10px;
         // border: 1px solid red;
 
         .contenutoColonna {
@@ -51,7 +52,7 @@ body {
     }
 
     .secondaColonna {
-        padding: 50px 0 50px 0;
+        padding: 50px 10px 50px 10px;
         // border: 1px solid red;
 
         .contenutoColonna {
@@ -65,9 +66,16 @@ body {
     }
 }
 
+
+
+
+
 %h {
-    color: $titoli;
+    color: $colPrinc;
+    @include filtro(90);
     font-family: $FFamilyTitolo;
+
+
 }
 
 @for $i from 1 through 6 {
@@ -94,6 +102,271 @@ main {
 
 }
 
+.principale {
+    background-color: $colPrinc !important;
+    border: 1px solid $colPrinc !important;
+    @include filtro(90);
+
+}
+
+strong {
+    color: $colPrinc;
+    @include filtro(90);
+}
+
+.contenutoSingolacolonna {
+    width: 60%;
+    margin: 50px auto 50px auto;
+    // border: 1px solid red;
+}
+
+
+section#link-2 {
+    @extend %dueColonne;
+    margin-top: 50px;
+
+    img.fotoCitazione {
+        width: 100%;
+        margin: auto;
+        border: 1px solid $colPrinc;
+        padding: 2px;
+        border-radius: 5px;
+
+        @include filtro(100);
+    }
+
+    p {
+        margin: 30px 0;
+        text-align: justify;
+    }
+
+    ul.contatore {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        margin: 30px auto;
+        padding: 0;
+        // border: 1px solid red;
+
+        li {
+            width: 170px;
+            height: 140px;
+            background-color: $colPrinc;
+            color: $testoPie;
+            box-shadow: 10px 10px 30px $colPrinc;
+
+            border: 1px solid $sfondoBody;
+            border-radius: 20px;
+            margin: 20px 20px;
+            padding: 20px;
+            text-align: center;
+            // font-size: 0.82rem;
+
+            @include filtro(100);
+
+            &:hover {
+                color: $linkPie;
+
+                h3 {
+                    color: $linkPie;
+                }
+            }
+
+            h3 {
+                color: $testoPie;
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            p {
+                padding-top: 0;
+                margin-top: 0;
+                text-align: center;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    ul.competenze {
+        text-align: start;
+        margin: 20px 0 50px 0;
+
+        li {
+            text-align: start;
+        }
+    }
+
+
+}
+
+section#link-3 {
+    @extend %dueColonne;
+
+    img.fotoCitazione {
+        width: 100%;
+        margin: auto;
+        border: 1px solid $colPrinc;
+        padding: 2px;
+        border-radius: 5px;
+
+        @include filtro(100);
+    }
+
+    p {
+        margin: 30px 0;
+        text-align: justify;
+    }
+}
+
+section#link-4 {
+    @extend %dueColonne;
+
+    img.fotoCitazione {
+        width: auto;
+        height: 500px;
+        @include filtro(100);
+    }
+}
+
+section#link-5 {
+    @extend %dueColonne;
+    background-color: calcolaColoreFn($sfondoBanner, 1, 2.8%);
+    margin-bottom: 0;
+
+    h2 {
+        margin-bottom: 20px;
+        color: $testoPie;
+    }
+
+    form {
+        fieldset {
+            legend {
+                display: none;
+            }
+
+            label,
+            .fintaLabel {
+                color: $testoPie;
+
+                span.richiesto {
+                    color: $colPrinc;
+                    margin-left: 3px
+                }
+            }
+
+            p.privacy {
+                font-size: 0.8rem;
+                color: $testoPie;
+                margin-top: 10px;
+                ;
+            }
+
+            input[type=text],
+            input[type=date],
+            input[type=email],
+            input[type=number],
+            textarea {
+                border-radius: 0;
+                background-color: $sfondoInput;
+                border: none;
+                border-bottom: 4px solid $testoPie;
+
+                &:focus {
+                    border-bottom-color: $colPrinc;
+                }
+            }
+
+            input:focus,
+            input:checked {
+                box-shadow: none;
+            }
+
+            .form-check-input:checked {
+                background-color: $colPrinc;
+                ;
+                border-color: $colPrinc;
+                // box-shadow: none;
+            }
+
+            ::placeholder {
+                color: $testoPie;
+                opacity: 1;
+            }
+
+            :-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: $testoPie;
+            }
+
+            ::-ms-input-placeholder {
+                /* Microsoft Edge */
+                color: $testoPie;
+            }
+
+            text-align: start;
+        }
+    }
+
+    .sfondoColonna {
+        margin-top: 50px;
+        background-image: url(../img/gioielloContatti3.jpeg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left;
+        min-height: 550px;
+        // border: 1px solid red;
+    }
+}
+
+section.confronto {
+
+    table {
+        width: 100%;
+        height: 400px;
+
+        thead {
+            th {
+                text-align: center;
+                color: $colPrinc;
+
+                font-size: 1.2rem;
+                @include filtro(90);
+            }
+        }
+
+        tbody {
+            tr {
+                background-color: $sfondoTesto;
+
+                &:nth-child(odd) {
+                    background-color: $linkPie;
+                }
+
+                th {
+                    color: $testo;
+                    text-align: left;
+                    padding-left: 5px;
+                }
+
+                td {
+                    color: $testo;
+                    text-align: center;
+                    font-size: 1.5rem;
+
+                    .bi-x-circle-fill {
+                        color: $x;
+                    }
+
+                    .bi-check-circle-fill {
+                        color: $v;
+                    }
+                }
+            }
+        }
+
+    }
+}
 
 section.aule {
     @extend %dueColonne;
@@ -132,113 +405,36 @@ section.aule {
     // }
 }
 
-section#link-5 {
-    @extend %dueColonne;
-    background-color: calcolaColoreFn($sfondoBanner, 1, 2.8%);
-    margin-bottom: 0;
 
-    h2 {
-        margin-bottom: 20px;
+section.titolo {
+    @extend %dueColonne;
+    background-color: $sfondoBanner;
+    padding: 0;
+
+    .primaColonna {
+        margin: 50px 0 10px 0;
+        padding: 0;
+    }
+
+    h3 {
+        text-align: start;
         color: $testoPie;
     }
-
-    form {
-        fieldset {
-            legend {
-                display: none;
-            }
-
-            label,
-            .fintaLabel {
-                color: $testoPie;
-
-                span.richiesto {
-                    color: $colPrinc;
-                    margin-left: 3px
-                }
-            }
-
-            p.privacy {
-                font-size: 0.8rem;
-                color: $testoPie;
-                margin-top: 10px;
-            }
-
-            input[type=text],
-            input[type=date],
-            input[type=email],
-            input[type=number],
-            textarea {
-                border-radius: 0;
-                background-color: $sfondoInput;
-                border: none;
-                border-bottom: 4px solid $testoPie;
-
-                &:focus {
-                    border-bottom-color: $colPrinc;
-                }
-            }
-
-            input:focus,
-            input:checked {
-                box-shadow: none;
-            }
-
-            .form-check-input:checked {
-                background-color: $colPrinc;
-                border-color: $colPrinc;
-                // box-shadow: none;
-            }
-
-            ::placeholder {
-                color: $testoPie;
-                opacity: 1;
-            }
-
-            :-ms-input-placeholder {
-                /* Internet Explorer 10-11 */
-                color: $testoPie;
-            }
-
-            ::-ms-input-placeholder {
-                /* Microsoft Edge */
-                color: $testoPie;
-            }
-
-            text-align: start;
-        }
-    }
-
-    .sfondoColonna {
-        margin-top: 50px;
-        background-image: url(../img/gioielloContatti3.jpeg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: left;
-        min-height: 550px;
-        // border: 1px solid red;
-    }
 }
 
+section#carousel-gioielli {
+    background-color: $sfondoBanner;
+    padding: 50px 0;
+}
 
-section#link-4 {
+section#carousel-aziende {
     @extend %dueColonne;
+    background-color: $sfondoBanner;
+    padding: 0 0 50px 0;
+    margin-top: 0px;
 
-    img.fotoCitazione {
-        width: auto;
-        height: 500px;
-        filter: grayscale(100%);
-        transition: filter 0.5s ease-in-out;
 
-        &:hover {
-            filter: grayscale(0%);
-        }
-    }
 }
-
-
-
-
 
 figure.citazione {
     color: $testo;
@@ -283,17 +479,34 @@ figure.citazione {
 /*###################################################################*/
 /* CAROUSEL DI CITAZIONI*/
 
+#gioielliSlide {
 
+    .card-img {
+        background-color: $sfondoBanner;
+    }
+}
+
+#aziendeSlide {
+
+    .card-img {
+        background-color: $sfondoBanner;
+    }
+}
 
 .card {
     margin: 10px;
     border: 1px solid $colPrinc;
-    filter: grayscale(100%);
-    transition: filter 0.5s ease-in-out;
+    @include filtro(100);
 
-    &:hover {
-        filter: grayscale(0%);
+    .card-img {
+        padding: 2px;
+
+        img {
+            border-radius: 5px;
+        }
     }
+
+
 
     .card-img-overlay {
         color: $colPrinc;
@@ -350,15 +563,35 @@ figure.citazione {
     transform: translateX(0);
 }
 
-.custom-popover {
-    --bs-popover-max-width: 200px;
-    --bs-popover-border-color: var(--bs-primary);
-    --bs-popover-header-bg: var(--bs-primary);
-    --bs-popover-header-color: var(--bs-white);
-    --bs-popover-body-padding-x: 1rem;
-    --bs-popover-body-padding-y: .5rem;
-}
 
+
+
+/* MODAL ############################################*/
 #modalCitazione {
     display: none;
+
+    .modal-header {
+        background-color: $colPrinc;
+
+        h1 {
+            color: $linkPie;
+        }
+
+    }
+
+    .modal-body {
+        font-style: italic;
+    }
+
+    .modal-footer {
+        button {
+            background-color: $colPrinc;
+            border: 1px solid $colPrinc;
+
+            &:hover {
+                background-color: calcolaColoreScuroFn($colPrinc, 1, 10%);
+                border-color: calcolaColoreScuroFn($colPrinc, 1, 10%);
+            }
+        }
+    }
 }
