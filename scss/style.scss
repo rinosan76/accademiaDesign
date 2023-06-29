@@ -33,7 +33,7 @@ body {
     width: 100%;
 
     .primaColonna {
-        padding: 50px 10px 50px 10px;
+        padding: 50px 20px 50px 10px;
         // border: 1px solid red;
 
         .contenutoColonna {
@@ -43,16 +43,18 @@ body {
 
             @media all and (min-width: ($xl + "px")) and (max-width: ($xxl + "px")) {
                 margin-left: 20%;
+                padding: 20px 10px;
             }
 
             @media all and (max-width: ($xl + "px")) {
                 margin: auto;
+                padding: 20px 10px;
             }
         }
     }
 
     .secondaColonna {
-        padding: 50px 10px 50px 10px;
+        padding: 50px 10px 50px 20px;
         // border: 1px solid red;
 
         .contenutoColonna {
@@ -61,6 +63,7 @@ body {
 
             @media all and (max-width: ($xl + "px")) {
                 margin: auto;
+                padding: 20px 10px;
             }
         }
     }
@@ -117,9 +120,68 @@ strong {
 .contenutoSingolacolonna {
     width: 60%;
     margin: 50px auto 50px auto;
+
     // border: 1px solid red;
+    @media all and (max-width: ($xl + "px")) {
+        width: 95%;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+    }
 }
 
+main#link-1 {
+    @extend %dueColonne;
+    margin-top: 50px;
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    img.fotoCitazione {
+        width: 100%;
+        margin: auto;
+        border: none;
+        padding: 2px;
+        border-radius: 5px;
+
+        @include filtro(100);
+    }
+
+    p {
+        margin: 30px 0;
+        text-align: justify;
+    }
+
+    ul.cosaImpari {
+        list-style: none;
+        margin-left: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            text-align: left;
+            margin: 0 0 10px 0;
+            @include filtro(80);
+
+            &:before {
+                content: "\F26A";
+                font-family: "bootstrap-icons";
+                // display: inline-block;
+                padding-right: 10px;
+                vertical-align: bottom;
+                color: $colPrinc;
+                font-size: 1.4rem;
+
+            }
+
+        }
+    }
+}
 
 section#link-2 {
     @extend %dueColonne;
@@ -191,13 +253,35 @@ section#link-2 {
     ul.competenze {
         text-align: start;
         margin: 20px 0 50px 0;
+        padding: 0;
 
         li {
-            text-align: start;
+            list-style: none;
+            text-align: left;
+            margin: 0 0 10px 0;
+            @include filtro(80);
+
+            &:before {
+                content: "\F26A";
+                font-family: "bootstrap-icons";
+                // display: inline-block;
+                padding-right: 10px;
+                vertical-align: bottom;
+                color: $colPrinc;
+                font-size: 1.4rem;
+
+            }
+
         }
     }
 
+    @media all and (max-width: ($xl + "px")) {
+        margin-top: 0;
 
+        .secondaColonna {
+            padding-top: 0
+        }
+    }
 }
 
 section#link-3 {
@@ -396,32 +480,9 @@ section.aule {
         background-color: $sfondoBanner;
     }
 
-    // @media all and (min-width: ($xl + "px")) and (max-width: ($xxl + "px")) {
-    //     width: 80%;
-    // }
-
-    // @media all and (max-width: ($xl + "px")) {
-    //     width: 100%
-    // }
 }
 
 
-// section.titolo {
-//     @extend %dueColonne;
-//     background-color: $sfondoBanner;
-//     padding: 0;
-
-//     .primaColonna {
-//         margin: 50px 0 10px 0;
-//         padding: 0;
-
-//         @media all and (max-width: ($xl + "px")) {
-//             margin: auto;
-//         }
-//     }
-
-
-// }
 
 section#carousel-gioielli {
     background-color: $sfondoBanner;
